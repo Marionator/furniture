@@ -1,0 +1,20 @@
+<div class="container">
+<h1 class="mt-5 mb-4">My bookings</h1>
+
+<%   @bookings.each do |b| %>
+  <div class="booking-card">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="booking-card-infos">
+      <h2><%= b.item.name %></h2>
+      <p><%= b.start_date %> – <%= b.end_date %></p>
+      <p class="bold">Amount: £<%= b.item.price %></p>
+      <p class="faded">Booking ID: <%= b.id %></p>
+      <%= link_to "Cancel", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-dark" %>
+
+    </div>
+  </div>
+
+
+<% end %>
+</ul>
+</div>
