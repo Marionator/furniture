@@ -1,0 +1,13 @@
+<h1><%= @item.name %></h1>
+<p><%= @item.availability %></p>
+<p><%= @item.color %></p>
+<p><%= @item.description %></p>
+<p><%= @item.price %></p>
+<p><%= @item.width %></p>
+<p><%= @item.height %></p>
+<p><%= @item.depth %></p>
+<p><%= @item.weight %></p>
+<p><%= @item.shipping %></p>
+<%=button_to "delete this item", @item, method: :delete, data:{ turbo_confirm: "Are you sure?"}%>
+<%= link_to "Back to items", items_path %>
+<%= link_to "Edit item", edit_item_path %>

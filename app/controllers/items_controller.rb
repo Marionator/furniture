@@ -1,17 +1,16 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[show, edit, update, destroy]
-
   def index
     @items = Item.all
   end
 
   def new
-    @item =Item.new
+    @item = Item.new
   end
 
   def create
     @item = Item.new(item_params)
-    if @item.save?
+    @item.user = current_user
+    if @item.save
       redirect_to item_path(@item)
     else
       render 'new', status: :unprocessable_entity
@@ -19,29 +18,32 @@ class ItemsController < ApplicationController
   end
 
   def show
+    set_item
   end
 
   def edit
+    set_item
   end
 
   def update
+    set_item
     @item.update(item_params)
     redirect_to item_path(@item)
   end
 
   def destroy
+    set_item
     @item.destroy
-    redirect_to item_path, status: :see_other
+    redirect_to items_path, status: :see_other
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :type, :color, :description, :price, :width, :height, :depth, :weight, :shipping)
+    params.require(:item).permit(:name, :category, :color, :description, :price, :width, :height, :depth, :weight, :shipping)
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
