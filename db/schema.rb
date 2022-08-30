@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_105509) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_133757) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,8 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_105509) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.string "type"
-    t.boolean "availability"
+    t.boolean "availability", default: true
     t.string "color"
     t.text "description"
     t.integer "price"
@@ -40,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_105509) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.string "category"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
