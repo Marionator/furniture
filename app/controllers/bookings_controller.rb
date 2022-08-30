@@ -7,12 +7,13 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.item = @item
+    @booking.user = current_user
     if @booking.save
       redirect_to item_path(@item)
     else
@@ -33,6 +34,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:user_id, :start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
