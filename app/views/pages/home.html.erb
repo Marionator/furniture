@@ -1,2 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <div class="container">
+    <h1>The rental platform for furniture and homeware.</h1>
+    <p>Buy, Swap or Return when it suits you.</p>
+  </div>
+</div>
+<div class="container">
+  <h2>what's new?</h2>
+  <div class="row">
+    <% @most_recent_items.each do |i| %>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="product-card">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="product-card-infos">
+            <div>
+              <h2><%= i.name %></h2>
+              <p><%= i.category %></p>
+            </div>
+            <h2 class="product-card-pricing">£<%= i.price %></h2>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<h2>categories</h2>
+<div class="row">
+  <div class="col-sm-12 col-md-6 category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <div>
+    <h3>sofas</h3>
+    <a class="btn-main" href="#">SHOP NOW</a>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <h3>desks</h3>
+    <a class="btn-main" href="#">SHOP NOW</a>
+  </div>
+  <div class="col-sm-12 col-md-6 category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <h3>decor</h3>
+    <a class="btn-main" href="#">SHOP NOW</a>
+  </div>
+  <div class="col-sm-12 col-md-6 category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <h3>chairs</h3>
+    <a class="btn-main" href="#">SHOP NOW</a>
+  </div>
+</div>
