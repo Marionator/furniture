@@ -6,12 +6,12 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item =Item.new
+    @item = Item.new
   end
 
   def create
     @item = Item.new(item_params)
-    if @item.save?
+    if @item.save
       redirect_to item_path(@item)
     else
       render 'new', status: :unprocessable_entity
@@ -37,11 +37,10 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :type, :color, :description, :price, :width, :height, :depth, :weight, :shipping)
+    params.require(:item).permit(:name, :category, :color, :description, :price, :width, :height, :depth, :weight, :shipping)
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
-
 end

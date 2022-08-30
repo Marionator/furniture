@@ -1,0 +1,19 @@
+<h1>Add a new item</h1>
+
+<%= simple_form_for(@item) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.input :color %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :width %>
+    <%= f.input :height %>
+    <%= f.input :depth %>
+    <%= f.input :weight %>
+    <%= f.select :shipping, ["deliver to the renter", "ask the renter to collect", "flixable"] %>
+    <%= f.submit %>
+<% end %>
+
+<div>
+  <%= link_to "Back", items_path %>
+</div>
