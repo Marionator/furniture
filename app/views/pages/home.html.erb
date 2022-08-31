@@ -5,26 +5,30 @@
     <%= link_to "SHOP ALL", items_path, class: "btn-main" %>
   </div>
 </div>
+
 <div class="container">
   <h2>what's new?</h2>
   <div class="row">
-    <% @most_recent_items.each do |i| %>
       <div class="col-sm-6 col-md-4 col-lg-3">
+        <% @most_recent_items.each do |i| %>
         <div class="product-card">
-        <%= cl_image_tag i.photo.key, height: 300, width: 400, crop: :fill %>
-          <div class="product-card-infos">
-            <div>
-              <h2><%= i.name %></h2>
-              <p><%= i.category %></p>
-              <%= link_to "learn more", item_path(i), class: "btn btn-dark" %>
-            </div>
-            <h2 class="product-card-pricing">£<%= i.price %></h2>
-            </div>
+        <%# <%= cl_image_tag i.photo.key, height: 300, width: 400, crop: :fill %>
+          <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1230&q=80" class="frontpage-replacement-images">
+            <div class="col-sm-6 product-card-infos">
+              <div>
+                <div class="product-card-title-price">
+                  <h2><%= i.name %></h2>
+                  <h2 class="price">£<%= i.price %></h2>
+                </div>
+                  <p><i class="fa-solid fa-chair"></i>  <%= i.category %></p>
+                <%= link_to "See item", item_path(i), class: "btn btn-dark" %>
+              </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
 <h2>categories</h2>
 <div class="row">
   <div class="col-sm-12 col-md-6 category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dqydndvhv/image/upload/v1661948076/g1hhiywpd3o3rwtv8thc.jpg)">

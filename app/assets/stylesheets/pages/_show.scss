@@ -1,0 +1,56 @@
+@import "home";
+
+.added-item-banner {
+  background-color: black;
+  color: white;
+}
+
+
+
+.added-item-info {
+  margin: 15px;
+  background-color: white;
+  padding: 10px;
+  border-left: 2px solid black;
+}
+
+
+// .added-item-buttons {
+// }
+
+.added-item-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: rgba(187, 187, 187, 0.8);
+  color: white;
+  text-decoration: none;
+  // FOR SOME REASON, THIS ISN'T WORKING - transition: opacity 0.3s ease;
+  border: 0;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+}
+
+.added-item-buttons button:hover {
+  background-color: black;
+  border: 0;
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+
+.added-item-info2 {
+  margin: 15px;
+  background-color: white;
+  padding: 10px;
+  border-left: 2px solid black;
+}
+
+.added-item-buttons2 {
+  display: inline;
+  justify-content: space-around;
+}
+
+.added-item-buttons2 btn {
+  flex-grow: 1;
+}
