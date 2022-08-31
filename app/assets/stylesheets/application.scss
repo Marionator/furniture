@@ -10,3 +10,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.form_container {
+  padding:30px;
+  width:80%;
+  font-family:'Times New Roman', Times, serif;
+  text-align: left;
+  font-size: large;
+  position: center;
+  margin-left: 140px;
+  margin-right: 140px;
+  background-image: url('container_background.jpg');
+}
