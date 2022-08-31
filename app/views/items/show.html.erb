@@ -1,4 +1,5 @@
-<h1><%= @item.name %></h1>
+<h1 class='title_1'><%= @item.name %></h1>
+<div class='info_container'>
 <p><%= @item.availability %></p>
 <p><%= @item.color %></p>
 <p><%= @item.description %></p>
@@ -8,6 +9,12 @@
 <p><%= @item.depth %></p>
 <p><%= @item.weight %></p>
 <p><%= @item.shipping %></p>
-<%=button_to "delete this item", @item, method: :delete, data:{ turbo_confirm: "Are you sure?"}%>
-<%= link_to "Back to items", items_path %>
-<%= link_to "Edit item", edit_item_path %>
+
+<%= button_to "Delete", @item, method: :delete, data:{ turbo_confirm: "Are you sure?"}, class: 'btn btn-dark'%>
+</div>
+
+<div class = 'container'>
+<%= link_to "Back to Items", items_path, class: 'btn btn-dark'%>
+<%= link_to "Edit", edit_item_path, class: 'btn btn-dark'%>
+<%= link_to "Rent", new_item_booking_path(@item), class: 'btn btn-dark' %>
+</div>

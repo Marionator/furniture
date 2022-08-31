@@ -1,14 +1,16 @@
 <div class='container'>
 
 <h1 class='title_1'>Everything We Offer</h1>
+  <div class = 'cards'>
   <% @items.each do |item| %>
-  <div>
+  <div class='item_card'>
     <p><%= link_to item.name, item_path(item) %></p>
     <p> <%= item.price %> </p>
   </div>
   <% end %>
+  </div>
 
 <div class='new-item-button'>
-<%= link_to 'New item', new_item_path %>
+<%= link_to 'New item', new_item_path, class:"btn btn-black" %>
 </div>
 </div>
