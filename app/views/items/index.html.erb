@@ -1,4 +1,6 @@
-<h1>items list</h1>
+<div class='container'>
+
+<h1>Everything We Offer</h1>
   <% @items.each do |item| %>
   <div>
     <p><%= link_to item.name, item_path(item) %></p>
@@ -6,5 +8,7 @@
   </div>
   <% end %>
 
-
+<div class='new-item-button'>
 <%= link_to 'New item', new_item_path %>
+</div>
+</div>
