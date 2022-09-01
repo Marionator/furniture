@@ -1,20 +1,46 @@
 <div class="container">
-<h1 class="mt-5 mb-4">My bookings</h1>
-
-<%   @bookings.each do |b| %>
-  <div class="booking-card">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="booking-card-infos">
-      <h2><%= b.item.name %></h2>
-      <p><%= b.start_date %> – <%= b.end_date %></p>
-      <p class="bold">Amount: £<%= b.item.price %></p>
-      <p class="faded">Booking ID: <%= b.id %></p>
-      <%= link_to "Cancel", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-dark" %>
-
+<ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active tab" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Rented by me</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link tab" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Rented from me</button>
+  </li>
+</ul>
+<div class="tab-content mb-5" id="myTabContent">
+  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+  <h1 class="mt-5 mb-5">Things I rented</h1>
+              <%   @bookings.each do |b| %>
+                <div class="booking-card">
+                  <%= cl_image_tag b.item.photo.key %>
+                  <div class="booking-card-infos">
+                    <h2><%= b.item.name %></h2>
+                    <p><%= b.start_date %> – <%= b.end_date %></p>
+                    <p class="bold mb-3">Amount: £<%= b.item.price %></p>
+                    <%= link_to "Cancel", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-dark" %>
+                    <p class="faded mt-3">Booking ID: <%= b.id %></p>
+                  </div>
+                </div>
+              <% end %>
+      <%= link_to "Back to Items", items_path, class: 'btn btn-dark'%>
     </div>
+  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+  <h1 class="mt-5 mb-5">Things people rented from me</h1>
+              <%   @my_item_bookings.each do |b| %>
+                <div class="booking-card">
+                  <%= cl_image_tag b.item.photo.key %>
+                  <div class="booking-card-infos">
+                    <h2><%= b.item.name %></h2>
+                    <p><%= b.start_date %> – <%= b.end_date %></p>
+                    <p class="bold mb-3">Amount: £<%= b.item.price %></p>
+                    <%= link_to "Cancel", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-dark" %>
+                    <p class="faded mt-3">Booking ID: <%= b.id %></p>
+                  </div>
+                </div>
+              <% end %>
+      <%= link_to "Back to Items", items_path, class: 'btn btn-dark'%>
   </div>
-
-
-<% end %>
-<%= link_to "Back to Items", items_path, class: 'btn btn-dark'%>
+  <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+  <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+</div>
 </div>
