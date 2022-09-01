@@ -1,18 +1,21 @@
 require "open-uri"
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+# The data can then be loaded with the bin/rails db:seed command (or create!d alongside the database with db:setup).
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+#   movies = Movie.create!([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create!(name: "Luke", movie: movies.first)
+Booking.destroy_all
+Item.destroy_all
+User.destroy_all
 
-user1 = User.create(email: "user1@test.com", password: "123456")
-user2 = User.create(email: "user2@test.com", password: "123456")
-user3 = User.create(email: "user3@test.com", password: "123456")
-user4 = User.create(email: "user4@test.com", password: "123456")
-user5 = User.create(email: "user5@test.com", password: "123456")
-user6 = User.create(email: "user6@test.com", password: "123456")
+user1 = User.create!(email: "user1@test.com", password: "123456")
+user2 = User.create!(email: "user2@test.com", password: "123456")
+user3 = User.create!(email: "user3@test.com", password: "123456")
+user4 = User.create!(email: "user4@test.com", password: "123456")
+user5 = User.create!(email: "user5@test.com", password: "123456")
+user6 = User.create!(email: "user6@test.com", password: "123456")
 
 photo1 = URI.open("https://res.cloudinary.com/dqydndvhv/image/upload/v1661951595/myjbu39aqrgmsop3un9d.jpg")
 item1 = Item.create(user_id: 2, name: "Cute table from 1950s", color: "Pink", category: "Table", shipping: "delivery to the renter", price: 53, description: "wonderful bed")
@@ -64,9 +67,9 @@ item10 = Item.create(user_id: 2, name: "Dining table", color: "Purple", category
 item10.photo.attach(io: photo10, filename: "armchair.jpg", content_type: "image/jpg")
 item10.save
 
-Booking.create(user_id: 1, item_id: 1)
-Booking.create(user_id: 1, item_id: 3)
-Booking.create(user_id: 2, item_id: 2)
-Booking.create(user_id: 3, item_id: 4)
-Booking.create(user_id: 1, item_id: 7)
-Booking.create(user_id: 1, item_id: 5)
+Booking.create!(user: user1, item: item1)
+Booking.create!(user: user1, item: item3)
+Booking.create!(user: user2, item: item2)
+Booking.create!(user: user3, item: item4)
+Booking.create!(user: user1, item: item7)
+Booking.create!(user: user1, item: item5)

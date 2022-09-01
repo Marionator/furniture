@@ -1,30 +1,43 @@
 <h1 class='title_1'><%= @item.name %></h1>
-<div class='info_container'>
-<div><%= @item.photo %></div>
-<p><%= @item.availability %></p>
-<p><%= @item.color %></p>
-<p><%= @item.description %></p>
-<p><%= @item.price %></p>
-<p><%= @item.width %></p>
-<p><%= @item.height %></p>
-<p><%= @item.depth %></p>
-<p><%= @item.weight %></p>
-<p><%= @item.shipping %></p>
+<div class='container'>
+<div class='photo_card'>
+<%= cl_image_tag @item.photo.key, class:'pic' %>
+</div>
+</div>
 
-<%= button_to "Delete", @item, method: :delete, data:{ turbo_confirm: "Are you sure?"}, class: 'btn btn-dark'%>
+<div class='container'>
+<div class='d-flex'>
+
+  <div class='info_card_1'>
+  <p>Color:   <%= @item.color %></p>
+  <p>Price:   <%= @item.price %></p>
+  <p>Description:   <%= @item.description %></p>
+  <p>Width:   <%= @item.width %>         Height:   <%= @item.height %>         Depth:   <%= @item.depth %></p>
+  <p>Weight:   <%= @item.weight %></p>
+  <p>Shipping Option:   <%= @item.shipping %></p>
+
+  <%= button_to "Delete", @item, method: :delete, data:{ turbo_confirm: "Are you sure?"}, class: 'btn btn-sm btn-dark'%>
+  </div>
+
+  <div class='info_card_2'>
+    <h4 class='title_2'>Rent this item</h4>
+
+    <%= simple_form_for [@item, @booking] do |f| %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+      <% if current_user %>
+        <%= f.button :submit, value: "Rent this item", class: "btn-pink" %>
+      <% else %>
+        <%= link_to "Rent this item", new_user_session_path, class:'btn btn-dark' %>
+      <% end %>
+    <% end %>
+
+  </div>
+
+</div>
 </div>
 
 <div class = 'container'>
 <%= link_to "Back to Items", items_path, class: 'btn btn-dark'%>
 <%= link_to "Edit", edit_item_path, class: 'btn btn-dark'%>
-</div>
-
-<div class="container">
-  <h1 class="mt-5">Rent this item</h1>
-  <%= simple_form_for [@item, @booking] do |f| %>
-  <%= f.input :start_date, as: :date, html5: true %>
-  <%= f.input :end_date, as: :date, html5: true %>
-  <%= f.button :submit, value: "Rent this item", class: "btn-pink" %>
-  <% end %>
-
 </div>

@@ -10,36 +10,4 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-.form_container {
-  padding:30px;
-  width:80%;
-  text-align: left;
-  font-size: large;
-  position: center;
-  margin-left: 140px;
-  margin-right: 140px;
-  // background-image: url('container_background.jpg');
-  background-size:cover;
-}
-
-.title_1 {
-  padding: 30px;
-  text-align: center;
-  background: rgb(222, 220, 220);
-  color: black;
-  font-size: 30px;
-  font-style: normal;
-}
-
-.info_container{
-  padding:30px;
-  width:80%;
-  text-align: center;
-  font-size:large;
-  position: center;
-  margin-left: 140px;
-  margin-right: 140px;
-  margin-bottom:30px;
-  background-size:cover;
-}
+@import "components/card"
