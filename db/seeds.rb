@@ -10,12 +10,12 @@ Booking.destroy_all
 Item.destroy_all
 User.destroy_all
 
-user1 = User.create!(email: "user1@test.com", password: "123456")
-user2 = User.create!(email: "user2@test.com", password: "123456")
-user3 = User.create!(email: "user3@test.com", password: "123456")
-user4 = User.create!(email: "user4@test.com", password: "123456")
-user5 = User.create!(email: "user5@test.com", password: "123456")
-user6 = User.create!(email: "user6@test.com", password: "123456")
+user1 = User.create!(email: "user1@test.com", password: "123456", first_name: "user")
+user2 = User.create!(email: "user2@test.com", password: "123456", first_name: "user")
+user3 = User.create!(email: "user3@test.com", password: "123456", first_name: "user")
+user4 = User.create!(email: "user4@test.com", password: "123456", first_name: "user")
+user5 = User.create!(email: "user5@test.com", password: "123456", first_name: "user")
+user6 = User.create!(email: "user6@test.com", password: "123456", first_name: "user")
 
 photo1 = URI.open("https://res.cloudinary.com/dqydndvhv/image/upload/v1661951595/myjbu39aqrgmsop3un9d.jpg")
 item1 = Item.create(user_id: 2, name: "Cute table from 1950s", color: "Pink", category: "Table", shipping: "delivery to the renter", price: 53, description: "wonderful bed")
