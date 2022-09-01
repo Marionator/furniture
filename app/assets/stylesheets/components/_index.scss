@@ -9,17 +9,34 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "product_card";
+@import "card";
 
 
 .title_1 {
-  padding: 30px;
+  padding: 15px;
   text-align: center;
   background: rgb(222, 220, 220);
   color: black;
-  font-size: 30px;
+  font-size: 25px;
   font-style: normal;
+  margin-bottom:15px;
+}
+.title_2{
+  text-align: center;
 }
 
+.form_container {
+  padding:30px;
+  width:80%;
+  text-align: left;
+  font-size: large;
+  position: center;
+  margin-left: 140px;
+  margin-right: 140px;
+  margin-bottom: 30px;
+  // background-image: url('container_background.jpg');
+  background-size:cover;
+}
 
 .cards {
   margin-top:40px;
