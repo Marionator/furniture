@@ -1,4 +1,6 @@
-<h2>Sign up</h2>
+<h2 class="title_2">Sign up</h2>
+
+<div class="container">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
@@ -24,8 +26,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class:"btn btn-dark margin-setting" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>

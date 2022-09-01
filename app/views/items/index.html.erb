@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>All Products</h2>
+  <h2 class="title_2">All Products</h2>
   <div class="search">
   <%= form_with url: items_path(category: params[:category], color: params[:color], shipping: params[:shipping]), method: :get, class: "d-flex mb-3" do %>
     <%= text_field_tag :query,
