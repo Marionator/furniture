@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
   def show
     set_item
+    @booking = Booking.new
   end
 
   def edit

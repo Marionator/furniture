@@ -6,16 +6,12 @@ class BookingsController < ApplicationController
     @my_item_bookings = Booking.where(item: current_user.items)
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @booking.item = @item
     @booking.user = current_user
     if @booking.save
-      redirect_to item_path(@item)
+      redirect_to bookings_path
     else
       render :new, status: :unproccessable_entity
     end
