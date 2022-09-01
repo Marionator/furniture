@@ -67,9 +67,9 @@ item10 = Item.create(user_id: 2, name: "Dining table", color: "Purple", category
 item10.photo.attach(io: photo10, filename: "armchair.jpg", content_type: "image/jpg")
 item10.save
 
-Booking.create!(user: user1, item: item1)
-Booking.create!(user: user1, item: item3)
-Booking.create!(user: user2, item: item2)
-Booking.create!(user: user3, item: item4)
-Booking.create!(user: user1, item: item7)
-Booking.create!(user: user1, item: item5)
+Booking.create(user: user1, item: item1)
+Booking.create(user: user1, item: item3)
+Booking.create(user: user2, item: item2)
+Booking.create(user: user3, item: item4)
+Booking.create(user: user1, item: item7)
+Booking.create(user: user1, item: item5)

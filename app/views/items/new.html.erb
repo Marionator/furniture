@@ -5,15 +5,15 @@
 <%= simple_form_for(@item) do |f| %>
     <%= f.input :name %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :category, :collection => ["Chair", "Sofa", "Table", "Bed", "Desk", "Cupboard", "TV stand", "Chest of drawers", "Garden furniture", "Children furniture", "Decor", "Other"] %>
-    <%= f.input :color, :collection => ["Dark wood", "Light wood", "Black", "White", "Grey", "Blue", "Brown", "Copper", "Gold", "Green", "Navy", "Neutral", "Orange", "Pink", "Red", "Silver", "Yellow", "Purple", "Multiple colors", "Other"] %>
+    <%= f.input :category, :collection => ["Chair", "Sofa", "Table", "Bed", "Desk", "Cupboard", "TV stand", "Chest of drawers", "Garden furniture", "Children furniture", "Decor", "Other"], input_html: {class: "wid"}  %>
+    <%= f.input :color, :collection => ["Dark wood", "Light wood", "Black", "White", "Grey", "Blue", "Brown", "Copper", "Gold", "Green", "Navy", "Neutral", "Orange", "Pink", "Red", "Silver", "Yellow", "Purple", "Multiple colors", "Other"], input_html: {class: "wid"}   %>
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :width %>
     <%= f.input :height %>
     <%= f.input :depth %>
     <%= f.input :weight %>
-    <%= f.input :shipping, :collection =>["delivery to the renter", "collection from the owner", "flexible"] %>
+    <%= f.input :shipping, :collection =>["delivery to the renter", "collection from the owner", "flexible"], input_html: {class: "wid"}  %>
     <%= f.submit %>
 <% end %>
 </div>

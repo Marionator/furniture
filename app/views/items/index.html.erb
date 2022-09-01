@@ -8,9 +8,9 @@
       placeholder: "Find your dream furniture",
       value: params[:query]
     %>
-    <%= select_tag(:category, options_for_select(["Chair", "Sofa", "Table", "Bed", "Desk", "Cupboard", "TV stand", "Chest of drawers", "Garden furniture", "Children furniture", "Decor", "Other"], params[:category]), class: "form-select select", prompt: "category") %>
-    <%= select_tag(:color, options_for_select(["Dark wood", "Light wood", "Black", "White", "Grey", "Blue", "Brown", "Copper", "Gold", "Green", "Navy", "Neutral", "Orange", "Pink", "Red", "Silver", "Yellow", "Purple", "Multiple colors", "Other"], params[:color]), class: "form-select select", prompt: "color") %>
-    <%= select_tag(:shipping, options_for_select(["delivery to the renter", "collection from the owner", "flexible"], params[:shipping]), class: "form-select select", prompt: "shipping") %>
+    <%= select_tag(:category, options_for_select(["Chair", "Sofa", "Table", "Bed", "Desk", "Cupboard", "TV stand", "Chest of drawers", "Garden furniture", "Children furniture", "Decor", "Other"], params[:category]), class: "form-select select_1", prompt: "category") %>
+    <%= select_tag(:color, options_for_select(["Dark wood", "Light wood", "Black", "White", "Grey", "Blue", "Brown", "Copper", "Gold", "Green", "Navy", "Neutral", "Orange", "Pink", "Red", "Silver", "Yellow", "Purple", "Multiple colors", "Other"], params[:color]), class: "form-select select_1", prompt: "color") %>
+    <%= select_tag(:shipping, options_for_select(["delivery to the renter", "collection from the owner", "flexible"], params[:shipping]), class: "form-select select_1", prompt: "shipping") %>
     <%= submit_tag "Search", class: "btn btn-dark rounded-0" %>
 </div>
   <% end %>
