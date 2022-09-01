@@ -3,7 +3,13 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   margin-bottom: 20px;
-  height: 480px;
+  height: 500px;
+
+  span {
+    font-size: 0.9rem;
+    color: grey;
+    font-weight: 400;
+  }
 }
 
 .product-card > img {
@@ -17,6 +23,7 @@
   font-weight: 500;
   margin-bottom: 10px;
   text-align: left;
+  margin-top: 0;
 }
 
 .product-card p {
@@ -28,8 +35,12 @@
 
 .product-card .product-card-infos {
   padding: 16px;
+  height: 150px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+}
+
+.card-text {
+  max-width: 60%;
 }
