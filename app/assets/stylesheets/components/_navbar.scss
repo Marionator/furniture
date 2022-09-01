@@ -1,9 +1,21 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  font-weight: 600;
+  padding-top: 0;
+  padding-bottom: 0;
 
   i {
     font-size: 2rem;
+  }
+
+  .nav-item {
+    margin-left: 15px;
+  }
+
+  .nav-link {
+    color: black;
+    letter-spacing: 0.06rem;
   }
 }
 
@@ -13,4 +25,24 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.bold {
+  font-weight: 600;
+  letter-spacing: 0.06rem;
+}
+
+.logo-text {
+  margin-top: -20px;
+  padding-left: 40px;
+  color: black;
+}
+
+.navbar-brand {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container-fluid {
+  max-height: 70px;
 }
