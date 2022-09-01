@@ -1,16 +1,29 @@
-<div class='container'>
-
-<h1 class='title_1'>Everything We Offer</h1>
-  <div class = 'cards'>
-  <% @items.each do |item| %>
-  <div class='item_card'>
-    <p><%= link_to item.name, item_path(item) %></p>
-    <p> <%= item.price %> </p>
-  </div>
+<div class="container">
+  <h2>All Products</h2>
+  <%= form_with url: items_path, method: :get, class: "d-flex mb-3" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control rounded-0",
+    placeholder: "Find your dream furniture"
+  %>
+  <%= submit_tag "Search", class: "btn btn-dark rounded-0" %>
   <% end %>
+  <div class="row">
+    <% @items.each do |i| %>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="product-card">
+        <%= cl_image_tag i.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="product-card-infos">
+            <div class="card-text">
+              <h2><%= i.name %></h2>
+              <p class="mb-2"><%= i.category %></p>
+              <%= link_to "learn more", item_path(i), class: "btn btn-dark" %>
+            </div>
+            <h2 class="product-card-pricing">£<%= i.price %><span>/per week</span></h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-<div class='new-item-button'>
-<%= link_to 'New item', new_item_path, class:"btn btn-black" %>
 </div>
 </div>
