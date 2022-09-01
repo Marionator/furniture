@@ -5,6 +5,10 @@ class Item < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
+  scope :filter_by_category, ->(category) { where category: category }
+  scope :filter_by_color, ->(color) { where color: color }
+  scope :filter_by_shipping, ->(shipping) { where shipping: shipping }
+
   has_one_attached :photo
   belongs_to :user
   has_many :bookings
