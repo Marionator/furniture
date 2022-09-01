@@ -1,5 +1,6 @@
 <h1 class='title_1'><%= @item.name %></h1>
 <div class='info_container'>
+<div><%= @item.photo %></div>
 <p><%= @item.availability %></p>
 <p><%= @item.color %></p>
 <p><%= @item.description %></p>
@@ -16,5 +17,14 @@
 <div class = 'container'>
 <%= link_to "Back to Items", items_path, class: 'btn btn-dark'%>
 <%= link_to "Edit", edit_item_path, class: 'btn btn-dark'%>
-<%= link_to "Rent", new_item_booking_path(@item), class: 'btn btn-dark' %>
+</div>
+
+<div class="container">
+  <h1 class="mt-5">Rent this item</h1>
+  <%= simple_form_for [@item, @booking] do |f| %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :end_date, as: :date, html5: true %>
+  <%= f.button :submit, value: "Rent this item", class: "btn-pink" %>
+  <% end %>
+
 </div>
