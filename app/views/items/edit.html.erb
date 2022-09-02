@@ -3,8 +3,8 @@
 <div class='form_container'>
 <%= simple_form_for(@item) do |f| %>
     <%= f.input :name %>
-    <%= f.input :photo %>
-    <%= f.input :category, :collection => ["Chair", "Sofa", "Table", "Bed", "Desk", "Cupboard", "TV stand", "Chest of drawers", "Garden furniture", "children furniture", "Other"] %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :category, :collection => ["Chair", "Sofa", "Table", "Bed", "Desk", "Cupboard", "TV stand", "Chest of drawers", "Garden furniture", "Children furniture", "Decor", "Other"] %>
     <%= f.input :color, :collection => ["Dark wood", "Light wood", "Black", "White", "Grey", "Blue", "Brown", "Copper", "Gold", "Green", "Navy", "Neutral", "Orange", "Pink", "Red", "Silver", "Yellow", "Purple", "Multiple colors", "Other"] %>
     <%= f.input :description %>
     <%= f.input :price %>
@@ -12,7 +12,7 @@
     <%= f.input :height %>
     <%= f.input :depth %>
     <%= f.input :weight %>
-    <%= f.input :shipping, :collection =>["deliver to the renter", "ask the renter to collect", "flexible"] %>
+    <%= f.input :shipping, :collection =>["delivery to the renter", "collection from the owner", "flexible"] %>
     <%= f.submit %>
 <% end %>
 
