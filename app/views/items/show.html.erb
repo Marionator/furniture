@@ -15,9 +15,19 @@
   <p>Width:   <%= @item.width %>         Height:   <%= @item.height %>         Depth:   <%= @item.depth %></p>
   <p>Weight:   <%= @item.weight %></p>
   <p>Shipping Option:   <%= @item.shipping %></p>
+
   <% if current_user == @item.user %>
     <%= button_to "Delete", @item, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-sm btn-dark'%>
   <% end %>
+  <%= simple_form_for [@item, @favorite] do |f| %>
+      <% if current_user %>
+        <%= f.button :submit, value: "Add to favorite", class: "btn btn-dark" do %>
+          <i class="fa-regular fa-heart"></i>
+      <% end %>
+      <% else %>
+        <%= link_to "Add to favorites", new_user_session_path, class:'btn btn-dark' %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class='info_card_2'>
@@ -39,6 +49,7 @@
 </div>
 
 <div class = 'container'>
+
 <%= link_to "Back to Items", items_path, class: 'btn btn-dark'%>
 <%= link_to "Edit", edit_item_path, class: 'btn btn-dark'%>
 </div>

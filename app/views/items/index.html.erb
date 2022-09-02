@@ -18,7 +18,7 @@
     <% @items.each do |i| %>
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="product-card">
-        <%= cl_image_tag i.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag i.photo.key %>
           <div class="product-card-infos">
             <div class="card-text">
               <h2><%= i.name %></h2>
