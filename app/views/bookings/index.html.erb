@@ -32,7 +32,7 @@
                   <div class="booking-card-infos">
                     <h2><%= b.item.name %></h2>
                     <p><%= b.start_date %> – <%= b.end_date %></p>
-                    <p class="bold mb-3">Amount: £<%= b.item.price %></p>
+                    <p class="bold mb-3">Amount: £<%= b.price %></p>
                     <%= link_to "Cancel", booking_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-dark" %>
                     <p class="faded mt-3">Booking ID: <%= b.id %></p>
                   </div>

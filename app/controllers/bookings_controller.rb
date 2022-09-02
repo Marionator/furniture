@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.item = @item
+    @booking.price = get_price
     @booking.user = current_user
     if @booking.save
       redirect_to bookings_path
@@ -24,6 +25,14 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def get_price
+    @booking = Booking.find(params[:id])
+    @item = @booking.item
+    @price = @booking.start_date - @booking.end_date
+    @price = @days * (@item.price / 7)
+    @price
+  end
 
   def set_item
     @item = Item.find(params[:item_id])
