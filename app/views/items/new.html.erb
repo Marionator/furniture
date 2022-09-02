@@ -1,4 +1,4 @@
-<h1 class='title_1'>Add a new item</h1>
+<h1 class='title_1 pt-4 pb-4'>Add a new item</h1>
 
 <div class='form_container'>
 
@@ -16,8 +16,8 @@
     <%= f.input :shipping, :collection =>["delivery to the renter", "collection from the owner", "flexible"] %>
     <%= f.submit %>
 <% end %>
-</div>
 
-<div class = "container">
-  <%= link_to "Back", items_path, class:'btn btn-dark' %>
+<div class="mt-3">
+<%= link_to "Back", items_path, class:'btn btn-dark' %>
+</div>
 </div>
