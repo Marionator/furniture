@@ -15,8 +15,9 @@
   <p>Width:   <%= @item.width %>         Height:   <%= @item.height %>         Depth:   <%= @item.depth %></p>
   <p>Weight:   <%= @item.weight %></p>
   <p>Shipping Option:   <%= @item.shipping %></p>
-
-  <%= button_to "Delete", @item, method: :delete, data:{ turbo_confirm: "Are you sure?"}, class: 'btn btn-sm btn-dark'%>
+  <% if current_user == @item.user %>
+    <%= button_to "Delete", @item, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-sm btn-dark'%>
+  <% end %>
   </div>
 
   <div class='info_card_2'>
