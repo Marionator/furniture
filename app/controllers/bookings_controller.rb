@@ -9,11 +9,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.item = @item
+    @booking.price = get_price
     @booking.user = current_user
     if @booking.save
       redirect_to bookings_path
     else
-      render :new, status: :unproccessable_entity
+      render "bookings/show", status: :unprocessable_entity
     end
   end
 
@@ -21,6 +22,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path
+  end
+
+  def get_price
+    @booking = Booking.find(params[:id])
+    @item = @booking.item
+    @price = @booking.start_date - @booking.end_date
+    @price = @days * (@item.price / 7)
+    @price
   end
 
   private
