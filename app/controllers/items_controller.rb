@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
   def show
     set_item
     @booking = Booking.new
+    @favorite = Favorite.new
   end
 
   def edit
