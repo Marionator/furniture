@@ -11,11 +11,11 @@
     <% @most_recent_items.each do |i| %>
       <div class="col-sm-6 col-md-4 col-lg-3">
         <div class="product-card">
-        <%= cl_image_tag i.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag i.photo.key %>
           <div class="product-card-infos">
             <div>
               <h2><%= i.name %></h2>
-              <p><%= i.category %></p>
+              <p class="mb-2"><%= i.category %></p>
               <%= link_to "learn more", item_path(i), class: "btn btn-dark" %>
             </div>
             <h2 class="product-card-pricing">£<%= i.price %></h2>

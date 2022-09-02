@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     if params[:query].present?
       @items = Item.search_by_category_name_description(params[:query])
@@ -28,6 +29,7 @@ class ItemsController < ApplicationController
   def show
     set_item
     @booking = Booking.new
+    @favorite = Favorite.new
   end
 
   def edit
