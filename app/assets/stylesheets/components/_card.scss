@@ -1,22 +1,26 @@
 .info_card_1{
-  padding:15px;
-  width:45%;
+  padding:30px;
+  width:100%;
   text-align:left;
   font-size:medium;
   position:center;
   background-size:cover;
-  margin-top:30px;
   margin-left:15px;
   margin-right:15px;
   margin-bottom:45px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+  .favorite-div button {
+    border: none;
+    background-color: transparent;
+    color: #F18C79;
+    font-size: 1.5rem;
+  }
 }
 
 .info_card_2{
-  padding:15px;
-  width:45%;
+  padding: 30px;
+  width:100%;
   text-align:left;
   font-size:medium;
   position: center;
@@ -25,9 +29,7 @@
   margin-left:15px;
   margin-right:15px;
   margin-bottom:45px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 .photo_card{
   padding:5px;

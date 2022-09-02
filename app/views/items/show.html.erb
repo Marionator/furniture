@@ -1,35 +1,54 @@
-<h1 class='title_1'><%= @item.name %></h1>
-<div class='container'>
-<div class='photo_card'>
-<%= cl_image_tag @item.photo.key, class:'pic' %>
-</div>
-</div>
+<h1 class='title_1 pt-4 pb-4 mb-4'><%= @item.name %></h1>
 
 <div class='container'>
-<div class='d-flex'>
-
+<div class="row">
+<div class="col-lg-5">
+  <%= cl_image_tag @item.photo.key, class:'pic' %>
+</div>
+<div class="col-lg-7">
   <div class='info_card_1'>
-  <p>Color:   <%= @item.color %></p>
-  <p>Price:   <%= @item.price %></p>
-  <p>Description:   <%= @item.description %></p>
-  <p>Width:   <%= @item.width %>         Height:   <%= @item.height %>         Depth:   <%= @item.depth %></p>
-  <p>Weight:   <%= @item.weight %></p>
-  <p>Shipping Option:   <%= @item.shipping %></p>
+    <h4 class='title_2'>Item description</h4>
+    <p><strong>Color:</strong>   <%= @item.color %></p>
+    <p><strong>Price per week:</strong>   £<%= @item.price %></p>
+    <p><strong>Description:</strong>   <%= @item.description %></p>
+    <div class="d-flex">
+    <p class="w-25"><strong>Width:</strong>   <%= @item.width %></p>
+    <p class="w-25"><strong>Height:</strong>   <%= @item.height %></p>
+    <p class="w-25"><strong>Depth:</strong>   <%= @item.depth %></p>
+    <p class="w-25"><strong>Weight:</strong>   <%= @item.weight %></p>
+    </div>
 
-  <% if current_user == @item.user %>
-    <%= button_to "Delete", @item, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-sm btn-dark'%>
-  <% end %>
-  <%= simple_form_for [@item, @favorite] do |f| %>
-      <% if current_user %>
-        <%= f.button :submit, value: "Add to favorite", class: "btn btn-dark" do %>
-          <i class="fa-regular fa-heart"></i>
+    <p><strong>Shipping Option:</strong>   <%= @item.shipping %></p>
+    <div class="d-flex align-items-center justify-content-end">
+      <div class="p-2">
+      <% if current_user == @item.user %>
+        <%= button_to "Delete", @item, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-sm btn-dark btn-show'%>
       <% end %>
-      <% else %>
-        <%= link_to "Add to favorites", new_user_session_path, class:'btn btn-dark' %>
+      </div>
+      <div class="p-2">
+      <% if current_user == @item.user %>
+        <%= link_to "Edit", edit_item_path, class: 'btn btn-sm btn-dark btn-show'%>
       <% end %>
-    <% end %>
+      </div>
+      <div class="favorite-div ml-auto">
+        <%= simple_form_for [@item, @favorite] do |f| %>
+            <% if current_user %>
+              <%= button_to item_favorites_path(@item)  do %>
+                <% if current_user.favorited_item?(@item) %>
+                  <i class="fa-solid fa-heart"></i>
+                <% else %>
+                  <i class="fa-regular fa-heart"></i>
+                <% end %>
+              <% end %>
+            <% else %>
+              <%= link_to new_user_session_path, class:'btn btn-dark' do %>
+                <i class="fa-regular fa-heart"></i>
+              <% end %>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
   </div>
-
   <div class='info_card_2'>
     <h4 class='title_2'>Rent this item</h4>
 
@@ -37,7 +56,7 @@
     <%= f.input :start_date, as: :date, html5: true %>
     <%= f.input :end_date, as: :date, html5: true %>
       <% if current_user %>
-        <%= f.button :submit, value: "Rent this item", class: "btn-pink" %>
+        <%= f.button :submit, value: "Rent this item", class: "btn btn-dark" %>
       <% else %>
         <%= link_to "Rent this item", new_user_session_path, class:'btn btn-dark' %>
       <% end %>
@@ -47,9 +66,9 @@
 
 </div>
 </div>
+</div>
 
-<div class = 'container'>
-
+<div class = 'container mb-5'>
 <%= link_to "Back to Items", items_path, class: 'btn btn-dark'%>
-<%= link_to "Edit", edit_item_path, class: 'btn btn-dark'%>
+<%# <%= link_to "Edit", edit_item_path, class: 'btn btn-dark'%>
 </div>
