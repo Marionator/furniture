@@ -16,7 +16,9 @@
   <p>Weight:   <%= @item.weight %></p>
   <p>Shipping Option:   <%= @item.shipping %></p>
 
-  <%= button_to "Delete", @item, method: :delete, data:{ turbo_confirm: "Are you sure?"}, class: 'btn btn-sm btn-dark mb-3'%>
+  <% if current_user == @item.user %>
+    <%= button_to "Delete", @item, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-sm btn-dark'%>
+  <% end %>
   <%= simple_form_for [@item, @favorite] do |f| %>
       <% if current_user %>
         <%= f.button :submit, value: "Add to favorite", class: "btn btn-dark" do %>
