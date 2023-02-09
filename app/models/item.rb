@@ -14,6 +14,7 @@ class Item < ApplicationRecord
   has_many :bookings
   has_many :favorites
   validates :name, presence: true
+  validates :photo, presence: true
   validates :category, presence: true
   validates :description, presence: true
   validates :price, presence: true
