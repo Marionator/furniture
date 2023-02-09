@@ -18,22 +18,22 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <%= link_to "Home.", "/", class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "New.", root_path(anchor: "new"), class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Categories.", root_path(anchor: "categories"), class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Shop.", items_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'Rent out your item', new_item_path, class:"btn btn-dark bold" %>
+        </li>
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home.", "/", class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <a href="https://obscure-shelf-30868.herokuapp.com/#new" class="nav-link">New.</a>
-          </li>
-          <li class="nav-item active">
-            <a href="https://obscure-shelf-30868.herokuapp.com/#categories" class="nav-link">Categories.</a>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Shop.", items_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to 'Rent out your item', new_item_path, class:"btn btn-dark bold" %>
-          </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
