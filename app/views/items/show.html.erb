@@ -50,18 +50,20 @@
     </div>
   </div>
   <div class='info_card_2'>
-    <h4 class='title_2'>Rent this item</h4>
+    <%= turbo_frame_tag "rent-form" do %>
+      <%# <%= render "rent_form", item: @item, booking: @booking %>
+      <h4 class='title_2'>Rent this item</h4>
 
-    <%= simple_form_for [@item, @booking] do |f| %>
-    <%= f.input :start_date, as: :date, html5: true %>
-    <%= f.input :end_date, as: :date, html5: true %>
-      <% if current_user %>
-        <%= f.button :submit, value: "Rent this item", class: "btn btn-dark" %>
-      <% else %>
-        <%= link_to "Rent this item", new_user_session_path, class:'btn btn-dark' %>
+      <%= simple_form_for [@item, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <% if current_user %>
+          <%= f.button :submit, value: "Rent this item", class: "btn btn-dark" %>
+        <% else %>
+          <%= link_to "Rent this item", new_user_session_path, class:'btn btn-dark' %>
+        <% end %>
       <% end %>
     <% end %>
-
   </div>
 
 </div>

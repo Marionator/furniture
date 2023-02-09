@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to item_path(@item), alert: "Item added successfully"
     else
       render 'new', status: :unprocessable_entity
     end
@@ -39,13 +39,13 @@ class ItemsController < ApplicationController
   def update
     set_item
     @item.update(item_params)
-    redirect_to item_path(@item)
+    redirect_to item_path(@item), alert: "Your item details were updated"
   end
 
   def destroy
     set_item
     @item.destroy
-    redirect_to items_path, status: :see_other
+    redirect_to items_path, status: :see_other, alert: "Item deleted"
   end
 
   private

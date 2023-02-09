@@ -11,16 +11,20 @@ class BookingsController < ApplicationController
     @booking.item = @item
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path
+      redirect_to bookings_path, alert: "You successfuly rented an item!"
     else
-      render "bookings/show", status: :unprocessable_entity
+      respond_to do |format|
+        # format.turbo_stream { render turbo_stream: turbo_stream.replace("rent-form", partial: "items/rent_form", locals: {booking: @booking, item: @item }) }
+        # format.html { render :new, status: :unprocessable_entity, notice: "Please check the form for more details." }
+        # format.json { render json: @booking.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to bookings_path, alert: "Your booking is cancelled"
   end
 
   private

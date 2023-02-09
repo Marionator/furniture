@@ -10,9 +10,9 @@ class FavoritesController < ApplicationController
     @favorite.item = @item
     @favorite.user = current_user
     if @favorite.save
-      redirect_to item_path(@item)
+      redirect_to item_path(@item), alert: "Saved to Wishlist"
     else
-      render :show, status: :unproccessable_entity
+      render :show, status: :unproccessable_entity, alert: "Couldn't save to Wishlist :( Please, reload and try again!"
     end
   end
 
