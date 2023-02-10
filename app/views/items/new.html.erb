@@ -9,7 +9,7 @@
     <%= f.input :photo, as: :file %>
     <%= f.input :category, :collection => ["Chair", "Sofa", "Table", "Bed", "Desk", "Cupboard", "TV stand", "Chest of drawers", "Garden furniture", "Children furniture", "Decor", "Other"] %>
     <%= f.input :color, :collection => ["Dark wood", "Light wood", "Black", "White", "Grey", "Blue", "Brown", "Copper", "Gold", "Green", "Navy", "Neutral", "Orange", "Pink", "Red", "Silver", "Yellow", "Purple", "Multiple colors", "Other"] %>
-    <%= f.input :description %>
+    <%= f.input :description, hint: "Maximum 300 characters" %>
     <%= f.input :price %>
     <%= f.input :width %>
     <%= f.input :height %>

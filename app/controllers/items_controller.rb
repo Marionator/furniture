@@ -10,6 +10,11 @@ class ItemsController < ApplicationController
     @items = @items.filter_by_category(params[:category]) if params[:category].present?
     @items = @items.filter_by_color(params[:color]) if params[:color].present?
     @items = @items.filter_by_shipping(params[:shipping]) if params[:shipping].present?
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'items', :formats=>[:text, :html], locals: { items: @items } }
+    end
   end
 
   def new

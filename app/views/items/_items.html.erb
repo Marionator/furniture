@@ -1,0 +1,17 @@
+<div class="row mt-5 mb-5" data-search-target="itemsList">
+    <% items.each do |i| %>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="product-card">
+        <%= cl_image_tag i.photo.key %>
+          <div class="product-card-infos">
+            <div class="card-text">
+              <h2><%= i.name %></h2>
+              <p class="mb-2"><%= i.category %></p>
+              <%= link_to "Learn more", item_path(i), class: "btn btn-dark" %>
+            </div>
+            <h2 class="product-card-pricing">£<%= i.price %><span>/per week</span></h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>

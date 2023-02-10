@@ -2,15 +2,15 @@
   <div class="row footer-content">
     <div class="col-lg-4 footer-div">
     <h6 class="mb-3">ABOUT US</h6>
-      <a class="footer-link" href="#">Home</a>
+      <%= link_to "Home", root_path, class: "footer-link" %>
       <a class="footer-link" href="#">About</a>
       <a class="footer-link" href="#">Contact</a>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-4 footer-div">
     <h6 class="mb-3">SHOP</h6>
-      <a class="footer-link" href="#">All</a>
-      <a class="footer-link" href="#categories">Categories</a>
-      <a class="footer-link" href="#new">Featured</a>
+      <%= link_to "All", items_path, class: "footer-link" %>
+      <%= link_to "Categories", root_path(anchor: "categories"), class: "footer-link" %>
+      <%= link_to "Featured", root_path(anchor: "new"), class: "footer-link" %>
     </div>
       <div class="col-sm-12 col-md-12 col-lg-4 footer-div">
         <h3 class="mb-3">obscure.</h3>
