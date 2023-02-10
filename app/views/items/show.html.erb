@@ -7,7 +7,7 @@
 </div>
 <div class="col-lg-7">
   <div class='info_card_1'>
-    <h4 class='title_2'>Item description</h4>
+    <h4 class='align-center'>Item description</h4>
     <p><strong>Color:</strong>   <%= @item.color %></p>
     <p><strong>Price per week:</strong>   £<%= @item.price %></p>
     <p><strong>Description:</strong>   <%= @item.description %></p>
@@ -52,7 +52,7 @@
   <div class='info_card_2'>
     <%= turbo_frame_tag "rent-form" do %>
       <%# <%= render "rent_form", item: @item, booking: @booking %>
-      <h4 class='title_2'>Rent this item</h4>
+      <h4 class='align-center'>Rent this item</h4>
 
       <%= simple_form_for [@item, @booking] do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>

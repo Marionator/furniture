@@ -1,41 +1,50 @@
-<h2 class="title_2">Sign up</h2>
 
-<div class="container">
+<div class="container form-container">
+  <div class="signup-form-container">
+    <%= image_tag "signup-picture.jpg", class:'signup-pic' %>
+      <div class="signup-form-text">
+      <h2 class="align-center mt-3 mb-3">obscure.</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}, class: "signup-form") do |f| %>
+        <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
-  <%= f.error_notification %>
+        <div class="form-inputs">
+          <div class="d-flex justify-content-between">
+            <div class="w-50 me-4">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :first_name,
+                        required: true,
+                        input_html: { autocomplete: "first name" },
+                        wrapper_html: { class: "mb-0 !important" } %>
+            </div>
+            <div class="w-50 d-flex flex-column">
+            <%= f.input :last_name,
+                        required: false,
+                        input_html: { autocomplete: "last name" } %>
+            <%= f.input :location,
+                        required: false,
+                        input_html: { autocomplete: "location" } %>
+            <%= f.input :phone,
+                        required: false,
+                        input_html: { autocomplete: "phone" } %>
+              <div class="form-actions mb-3 d-flex">
+                <%= f.button :submit, "Sign up", class:"btn btn-dark signup-btn" %>
+                <% end %>
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :first_name,
-                required: true,
-                input_html: { autocomplete: "first name" } %>
-    <%= f.input :last_name,
-                required: false,
-                input_html: { autocomplete: "last name" } %>
-    <%= f.input :location,
-                required: false,
-                input_html: { autocomplete: "location" } %>
-    <%= f.input :phone,
-                required: false,
-                input_html: { autocomplete: "phone" } %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", class:"btn btn-dark margin-setting" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
 </div>

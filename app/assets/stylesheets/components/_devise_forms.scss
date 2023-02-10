@@ -1,0 +1,92 @@
+.form-container {
+  background-color: white;
+  width: 60%;
+  height: 500px;
+  margin: 40px auto;
+  padding: 0;
+
+  .signup-form-container {
+    display: flex;
+    height: 100%;
+    // justify-content: space-between;
+
+    .signup-pic {
+      width: 30%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .signup-form-text {
+      padding: 30px;
+      width: 70%;
+      height: 100%;
+
+      .signup-btn {
+        width: 70%;
+      }
+
+      .shared-login {
+        width: 30%;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .login-form-container {
+    display: flex;
+    height: 100%;
+
+    .login-form-text {
+      width: 50%;
+      height: 100%;
+      padding: 30px 70px;
+    }
+
+    .login-pic {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom;
+    }
+
+    .shared_buttons {
+      display: flex;
+    }
+
+    .shared-signup {
+      width: 25%;
+      font-weight: lighter;
+      margin-right: 5%;
+    }
+
+    .shared-forgot-password {
+      width: 70%;
+      font-weight: lighter;
+    }
+  }
+
+  .form-control {
+    background-color: white !important;
+  }
+
+  .form-actions {
+    margin-top: auto;
+    width: 100%;
+  }
+}
+
+.forgot-password-container {
+  background-color: white;
+  width: 35%;
+  margin: 40px auto;
+  padding: 50px;
+
+  .shared-signup {
+    width: 50%;
+    margin-left: 10px;
+  }
+
+  .shared-login {
+    width: 50%;
+  }
+}
