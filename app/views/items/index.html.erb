@@ -8,9 +8,9 @@
         value: params[:query],
         data: { search_target: "searchInput", action: "keyup->search#refresh"}
       %>
-      <%= f.select(:category, options_for_select(Item.all.map(&:category).uniq, selected: params[:category]), { :include_blank => 'category' }, { class: "form-select select-1", data: { search_target: "selectCategory", action: "change->search#refresh" } }) %>
-      <%= f.select(:color, options_for_select(Item.all.map(&:color).uniq, selected: params[:color]), { :include_blank => 'color' }, { class: "form-select select-1", data: { search_target: "selectColor", action: "change->search#refresh" } }) %>
-      <%= f.select(:shipping, options_for_select(Item.all.map(&:shipping).uniq, selected: params[:shipping]), { :include_blank => 'shipping' }, { class: "form-select select-1", data: { search_target: "selectShipping", action: "change->search#refresh" } }) %>
+      <%= f.select(:category, options_for_select(Item.all.map(&:category).uniq, selected: params[:category]), { :include_blank => 'category' }, { class: "form-select select-category", data: { search_target: "selectCategory", action: "change->search#refresh" } }) %>
+      <%= f.select(:color, options_for_select(Item.all.map(&:color).uniq, selected: params[:color]), { :include_blank => 'color' }, { class: "form-select select-color", data: { search_target: "selectColor", action: "change->search#refresh" } }) %>
+      <%= f.select(:shipping, options_for_select(Item.all.map(&:shipping).uniq, selected: params[:shipping]), { :include_blank => 'shipping' }, { class: "form-select select-shipping", data: { search_target: "selectShipping", action: "change->search#refresh" } }) %>
       <%= submit_tag "Search", class: "btn btn-dark rounded-0" %>
     <% end %>
   </div>

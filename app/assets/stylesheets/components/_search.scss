@@ -1,0 +1,23 @@
+.search {
+  input:focus, select:focus {
+    border: 1px solid #ced4da;
+    box-shadow: none;
+    outline: none;
+  }
+
+  select:focus {
+    border-left: none;
+  }
+
+  // input:focus
+
+  .select-category, .select-color, .select-shipping {
+    border-radius: 0;
+    border-left: none;
+    width: auto;
+  }
+
+  .select-shipping {
+    border-right: none;
+  }
+}
