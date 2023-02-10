@@ -1,13 +1,15 @@
-.info_card_1{
-  padding:30px;
-  width:100%;
+.item-show-card {
+  height: 800px;
+}
+
+.info_card_1 {
+  position: relative;
+  background-color: white;
+  padding:40px 50px;
+  width: 100%;
   text-align:left;
-  font-size:medium;
-  position:center;
-  background-size:cover;
-  margin-left:15px;
-  margin-right:15px;
-  margin-bottom:45px;
+  font-size: medium;
+  margin-bottom: 35px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 
   .favorite-div button {
@@ -16,21 +18,23 @@
     color: #F18C79;
     font-size: 1.5rem;
   }
+
+  .item-show-buttons {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+  }
 }
 
-.info_card_2{
-  padding: 30px;
-  width:100%;
+.rent-item-card {
+  background-color: white;
+  padding: 30px 50px;
+  width: 100%;
   text-align:left;
-  font-size:medium;
-  position: center;
-  background-size:cover;
-  margin-top:30px;
-  margin-left:15px;
-  margin-right:15px;
-  margin-bottom:45px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
+
 .photo_card{
   padding:5px;
   width:28%;
@@ -45,5 +49,7 @@
 }
 
 .pic{
-  width:100%;
+  height: 800px;
+  width: 120%;
+  object-fit: cover;
 }
