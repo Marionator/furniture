@@ -14,9 +14,8 @@ class BookingsController < ApplicationController
       redirect_to bookings_path, alert: "You successfuly rented an item!"
     else
       respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.replace("rent-form", partial: "items/rent_form", locals: {booking: @booking, item: @item }) }
-        format.html { render :new, status: :unprocessable_entity, notice: "Please check the form for more details." }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        format.turbo_stream
+        format.html { redirect_to bookings_path, alert: "Sorry, something was wrong with the booking!" }
       end
     end
   end

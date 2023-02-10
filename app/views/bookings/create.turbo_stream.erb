@@ -1,0 +1,11 @@
+<%= turbo_stream.replace 'rent-form' do %>
+  <%= simple_form_for([@item, @booking], html: { "id": "rent-form"}, data: { controller: 'form-redirect', action: 'turbo:submit-end->form-redirect#next' }) do |f| %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <% if current_user %>
+      <%= f.button :submit, value: "Rent this item", class: "btn btn-dark" %>
+    <% else %>
+      <%= link_to "Rent this item", new_user_session_path, class:'btn btn-dark' %>
+    <% end %>
+  <% end %>
+<% end %>
