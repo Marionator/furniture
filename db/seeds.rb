@@ -46,7 +46,7 @@ user6.save
 # ITEMS
 
 
-photo1 = URI.open("https://res.cloudinary.com/dqydndvhv/image/upload/v1661951595/myjbu39aqrgmsop3un9d.jpg")
+photo1 = URI.open("https://images.unsplash.com/photo-1594125674956-61a9b49c8ecc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80")
 item1 = Item.new(user: user2, name: "Cute table, hairpin legs", color: "Light wood", category: "Table", shipping: "delivery to the renter", price:7, width: 160, depth: 90, weight: 65, description: "Lovely, lightweight table. No scratches. A bit of a retro look thanks to its yellow legs!")
 item1.photo.attach(io: photo1, filename: "table.jpg", content_type: "image/jpg")
 item1.save
