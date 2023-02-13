@@ -80,3 +80,4 @@ gem "devise"
 gem "cloudinary"
 gem "pg_search"
 gem 'validates_overlap'
+gem 'htmlbeautifier'
