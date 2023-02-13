@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :items
   has_many :bookings
   has_many :favorites
+  has_one_attached :photo
 
   def favorited_item?(item)
     favorites.map(&:item).include?(item)
