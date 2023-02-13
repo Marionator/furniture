@@ -45,7 +45,7 @@ Logged-in users are able to:
 
 ### Links
 
-- Live Site URL: [Obscure Furniture](https://private-price-production.up.railway.app/)
+- Live Site URL: [Obscure Furniture](https://obscure.up.railway.app/)
 
 ## Our process
 
