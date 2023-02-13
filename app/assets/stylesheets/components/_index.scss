@@ -9,6 +9,7 @@
 @import "devise_forms";
 @import "footer";
 @import "form_legend_clear";
+@import "item_forms";
 @import "navbar";
 @import "product_card";
 @import "search";
@@ -26,19 +27,6 @@
 
 .align-center {
   text-align: center;
-}
-
-.form_container {
-  padding:30px;
-  width:80%;
-  text-align: left;
-  font-size: large;
-  position: center;
-  margin-left: 140px;
-  margin-right: 140px;
-  margin-bottom: 30px;
-  // background-image: url('container_background.jpg');
-  background-size:cover;
 }
 
 .cards {

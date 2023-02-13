@@ -1,0 +1,39 @@
+.item-form-container {
+  background-color: white;
+  width: 70%;
+  margin: 50px auto;
+  display: flex;
+  height: 620px;
+
+  .item-form-pic {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  .new_item, .edit_item {
+    width: 80%;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+
+    .column:first-child {
+      width: 60%;
+    }
+
+    .column:last-child {
+      width: 40%;
+      margin-left: 5%;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+
+  .form-control, .form-select {
+    background-color: white !important;
+  }
+}
