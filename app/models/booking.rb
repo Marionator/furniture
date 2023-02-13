@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
 
   validates :start_date, :end_date, presence: true
   validate :end_date_after_start_date
+  validates :start_date, :end_date, :overlap => {:scope => "item_id", :message_content => "– sorry, item is booked for this date."}
   validate :minimal_period
 
   def end_date_after_start_date
